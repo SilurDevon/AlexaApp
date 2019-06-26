@@ -1,0 +1,17 @@
+<div class="alexa-app">
+  <div *ngIf="userIsValid == false" class="login-page">
+    <img class="image" src="https://cdn.pixabay.com/photo/2016/12/27/13/10/logo-1933884_1280.png"
+      style="width: 50%; height: 50%;">
+    <div class="aform">
+      <div class="form-container">
+        <label class="label">Username</label>
+        <input type="username" class="input">
+        <label class="label">Password</label>
+        <input type="password" class="input">
+        <button class="button" (click)="checkUser()">Login</button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="userIsValid == true" class="dashboard">
+    <app-dashboard></app-dashboard>
+  </div>

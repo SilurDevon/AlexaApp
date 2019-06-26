@@ -1,0 +1,72 @@
+@import './src/app/components/vars';
+
+.alexa-app {
+  background-color: $lightgrey;;
+
+
+  .login-page {
+    display: flex;
+    background-color: $second;
+    font-family: 'Calibri';
+    height: 100%;
+
+
+
+    .aform {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+
+    .form-container {
+      display: flex;
+      flex-flow: column;
+    }
+
+    .label {
+      font-size: 0.9rem;
+    }
+
+    .input {
+      margin-bottom: 7px;
+      font-size: 0.9rem;
+    }
+
+
+    .button {
+      align-self: flex-end;
+      padding: 10px 30px;
+      margin-top: 10px;
+      background-color: $grey;
+      border-radius: 3px;
+      border: none;
+      color: black;
+      text-align: center;
+      text-decoration: none;
+      font-size: 0.7rem;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.24);
+    }
+
+    .button:active {
+      background-color: rgba(10, 10, 10, 0.644)
+    }
+  }
+
+  .dashboard{
+    background-color: $lightgrey;
+
+      .sidebar{
+        display: flex;
+        flex-flow: row;
+        align-content: center;
+        align-self: flex-start;
+        width: 10%;
+        height: 500px;
+        background-color: $prime;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.24);
+
+      }
+  }
+}

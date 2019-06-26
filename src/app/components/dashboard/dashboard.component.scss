@@ -1,0 +1,21 @@
+@import './src/app/components/vars';
+
+.dashboard {
+  background-color: $lightgrey;
+
+  .sidebar {
+    // display: flex;
+    // flex-flow: column;
+    // align-items: center;
+    // justify-content: center;
+    // align-self: flex-start;
+    width: 10%;
+    height: 700px;
+    background-color: $prime;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.24);
+
+    .bistum-logo {
+      width: 100%;
+    }
+  }
+}
