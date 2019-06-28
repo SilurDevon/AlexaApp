@@ -1,16 +1,13 @@
-@import './src/app/components/vars';
+@import './../../components/vars';
 
 .alexa-app {
   background-color: $lightgrey;;
 
-
   .login-page {
     display: flex;
     background-color: $second;
-    font-family: 'Calibri';
+    font-family: 'Calibri', sans-serif;
     height: 100%;
-
-
 
     .aform {
       display: flex;
@@ -18,7 +15,6 @@
       justify-content: center;
       width: 100%;
     }
-
 
     .form-container {
       display: flex;
@@ -33,7 +29,6 @@
       margin-bottom: 7px;
       font-size: 0.9rem;
     }
-
 
     .button {
       align-self: flex-end;
@@ -54,19 +49,19 @@
     }
   }
 
-  .dashboard{
+  .dashboard {
     background-color: $lightgrey;
 
-      .sidebar{
-        display: flex;
-        flex-flow: row;
-        align-content: center;
-        align-self: flex-start;
-        width: 10%;
-        height: 500px;
-        background-color: $prime;
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.24);
+    .sidebar {
+      display: flex;
+      flex-flow: row;
+      align-content: center;
+      align-self: flex-start;
+      width: 10%;
+      height: 500px;
+      background-color: $prime;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.24);
 
-      }
+    }
   }
 }

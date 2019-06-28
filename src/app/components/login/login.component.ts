@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 
 @Component({
@@ -10,7 +10,8 @@ export class LoginComponent implements OnInit {
 
   userIsValid: boolean;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
     this.userIsValid = false;
@@ -20,8 +21,4 @@ export class LoginComponent implements OnInit {
     this.userIsValid = true;
     console.log(this.userIsValid);
   }
-
-
-
-
 }
