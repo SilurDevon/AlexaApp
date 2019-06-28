@@ -1,7 +1,8 @@
 import {NgModule} from '@angular/core';
-import {DashboardComponent} from './dashboard.component';
 import {CommonModule} from '@angular/common';
 import {BrowserModule} from '@angular/platform-browser';
+
+import {DashboardComponent} from './dashboard.component';
 import {ToolsModule} from '../tools/tools.module';
 
 @NgModule({
