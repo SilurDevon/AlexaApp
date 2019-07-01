@@ -1,24 +1,34 @@
 import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  loginFormGroup: FormGroup;
+  loginFailed = false;
 
-  userIsValid: boolean;
+  errorMessage: string;
 
   constructor() {
+    this.loginFormGroup = new FormGroup({
+      username: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
+    });
   }
 
   ngOnInit() {
-    this.userIsValid = false;
   }
 
-  checkUser() {
-    this.userIsValid = true;
-    console.log(this.userIsValid);
+  login() {
+    this.loginFailed = true;
+    this.errorMessage = 'Incorrect Email or Password';
+  }
+
+  isValid(control: string) {
+    return (this.loginFormGroup.get(control).hasError('required') && this.loginFormGroup.get(control).touched);
   }
 }
