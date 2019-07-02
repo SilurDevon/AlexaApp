@@ -10,12 +10,15 @@
     </div>
     <div class="login">
       <div class="title">User Login</div>
-      <form [formGroup]="loginFormGroup">
+      <form [formGroup]="loginFormGroup"
+            (ngSubmit)="login()">
         <mat-form-field>
           <label>
             <input formControlName="username"
                    matInput
-                   placeholder="Username">
+                   placeholder="Username"
+                   email
+                   required>
           </label>
           <mat-error *ngIf="isValid('username')||loginFailed">
             Email is required
@@ -26,7 +29,8 @@
             <input formControlName="password"
                    matInput
                    placeholder="Password"
-                   type="password">
+                   type="password"
+                   required>
           </label>
           <mat-error *ngIf="isValid('password')||loginFailed">
             Password is required
@@ -36,7 +40,7 @@
           {{errorMessage}}
         </mat-error>
         <div class="btn-wrapper">
-          <button (click)="login()"
+          <button [disabled]="loginFormGroup.invalid"
                   mat-raised-button>
             LOGIN
           </button>
