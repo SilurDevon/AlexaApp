@@ -8,11 +8,20 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ToolsComponent implements OnInit {
 
+  public user: boolean;
+
 
   constructor() {
   }
 
   ngOnInit() {
+    this.user = false;
+  }
+
+  createUser() {
+    console.log(this.user);
+    this.user = true;
+    console.log(this.user);
   }
 
 
