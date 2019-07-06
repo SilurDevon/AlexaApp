@@ -1,6 +1,25 @@
-<div class="dashboard">
-  <div class="sidebar">
-      <img src="assets\graphics\bistum.jpg" class="bistum-logo">
-    <app-tools></app-tools>
-  </div>
-</div>
+<mat-sidenav-container class="dashboard">
+  <mat-sidenav class="sidenav" mode="side" position="start" opened>
+      <img class="bistum" src="assets\graphics\bistum.jpg" alt="" />
+    <button mat-raised-button>
+      <img class="dashboard-icon" src="assets\graphics\male-user-shadow.png" alt="" />
+      <h3> Dashboard </h3>
+    </button>
+    <button mat-raised-button>
+      <img class="dashboard-icon" src="assets\graphics\form.png" alt="" />
+      <h3> Aufgaben </h3>
+    </button>
+    <button mat-raised-button>
+      <img class="dashboard-icon" src="assets\graphics\multiple-users-silhouette.png" alt="" />
+      <h3> Personal </h3>
+    </button>
+    <button mat-raised-button>
+      <img class="dashboard-icon" src="assets\graphics\old-couple.png" alt="" />
+      <h3> Patienten </h3>
+    </button>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <h2>Main content</h2>
+  </mat-sidenav-content>
+</mat-sidenav-container>

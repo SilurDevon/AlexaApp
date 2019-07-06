@@ -1,21 +1,65 @@
 @import './src/app/components/vars';
 
+
 .dashboard {
-  background-color: $lightgrey;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
 
-  .sidebar {
-    // display: flex;
-    // flex-flow: column;
-    // align-items: center;
-    // justify-content: center;
-    // align-self: flex-start;
-    width: 10%;
-    height: 700px;
+  .sidenav {
+    align-content: center;
     background-color: $prime;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.24);
+    width: 15%;
+    box-shadow: 5px -1px 5px lightgray;
 
-    .bistum-logo {
+    .bistum {
       width: 100%;
+      margin-bottom: 10%;
     }
+
+    .mat-raised-button{
+      background-color: $second;
+      color: white;
+      width: 100%;
+      height: auto;
+      align-self: center;
+      margin-bottom: 20px;
+
+      .dashboard-icon {
+        width: 20%;
+        filter: invert(100%);
+        padding-top: 5px;
+      }
+
+      h3{
+        margin: 0;
+        padding: 5px 0 5px 0;
+      }
+    }
+
   }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
