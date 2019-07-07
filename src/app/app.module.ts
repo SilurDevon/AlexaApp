@@ -8,7 +8,7 @@ import {LoginModule} from './components/auth/login/login.module';
 import {DashboardModule} from './components/dashboard/dashboard.module';
 import {MaterialModule} from './shared/material.module';
 import {StartComponent} from './components/start/start.component';
-import {UserModule} from './components/user/user.module';
+// import {UserModule} from './components/user/user.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import {UserModule} from './components/user/user.module';
     LoginModule,
     DashboardModule,
     MaterialModule,
-    UserModule,
+    // UserModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

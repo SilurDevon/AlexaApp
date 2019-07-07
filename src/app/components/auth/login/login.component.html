@@ -4,18 +4,14 @@
   </div>
   <div class="section-wrapper right">
     <div class="logo-wrapper">
-      <img class="logo"
-           src="../../../../assets/graphics/logo-1933884_1280.png"
-           alt="Logo">
+      <img class="logo" src="../../../../assets/graphics/logo-1933884_1280.png" alt="Logo">
     </div>
     <div class="login">
       <div class="title">User Login</div>
       <form [formGroup]="loginFormGroup">
         <mat-form-field>
           <label>
-            <input formControlName="username"
-                   matInput
-                   placeholder="Username">
+            <input formControlName="username" matInput placeholder="Username">
           </label>
           <mat-error *ngIf="isValid('username')||loginFailed">
             Email is required
@@ -23,10 +19,7 @@
         </mat-form-field>
         <mat-form-field>
           <label>
-            <input formControlName="password"
-                   matInput
-                   placeholder="Password"
-                   type="password">
+            <input formControlName="password" matInput placeholder="Password" type="password">
           </label>
           <mat-error *ngIf="isValid('password')||loginFailed">
             Password is required
@@ -36,8 +29,7 @@
           {{errorMessage}}
         </mat-error>
         <div class="btn-wrapper">
-          <button (click)="login()"
-                  mat-raised-button>
+          <button (click)="login()" mat-raised-button>
             LOGIN
           </button>
         </div>
