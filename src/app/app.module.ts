@@ -8,6 +8,7 @@ import {LoginModule} from './components/auth/login/login.module';
 import {DashboardModule} from './components/dashboard/dashboard.module';
 import {MaterialModule} from './shared/material.module';
 import {StartComponent} from './components/start/start.component';
+import { RegisterModule } from './components/register/register.module';
 // import {UserModule} from './components/user/user.module';
 
 @NgModule({
@@ -22,7 +23,7 @@ import {StartComponent} from './components/start/start.component';
     LoginModule,
     DashboardModule,
     MaterialModule,
-    // UserModule,
+    RegisterModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

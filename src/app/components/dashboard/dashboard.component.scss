@@ -8,12 +8,13 @@
   left: 0;
   right: 0;
   display: flex;
-  align-items: center;
+  flex-flow: column;
 
   .sidenav {
-    align-content: center;
+    display: flex;
+    align-items: center;
     background-color: $prime;
-    width: 15%;
+    width: 12%;
     box-shadow: 5px -1px 5px lightgray;
 
     .bistum {
@@ -38,27 +39,26 @@
       h3 {
         margin: 0;
         padding: 5px 0 5px 0;
+        font-size: 1.2vw;
       }
     }
   }
 
   .sidenav-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    .form-container {
+    .hello-screen{
       display: flex;
       flex-flow: column;
-    }
-
+      margin: 7% 7%;
 
     .title {
-      text-align: center;
       font-size: 32px;
       font-weight: 300;
       color: #666;
-      margin: 40px 0;
+      margin-bottom: 5%;
     }
+  }
+
+
   }
 }

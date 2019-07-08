@@ -1,0 +1,30 @@
+
+    <div class="title">Neuen Benutzer anlegen</div>
+    <mat-divider></mat-divider>
+    <!-- <div *ngIf="user == true" class="form-container"> -->
+    <div class="form-container">
+      <div class="login-group">
+        <mat-form-field>
+          <input formControlName="username" matInput placeholder="Benutzername" type="username">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="password" matInput placeholder="Password" type="password">
+        </mat-form-field>
+      </div>
+      <div class="personaldata-group">
+        <mat-form-field>
+          <input formControlName="name" matInput placeholder="Vorname" type="name">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="vorname" matInput placeholder="Nachnahme" type="nachnahme">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="email" matInput placeholder="Email" type="email">
+        </mat-form-field>
+        <div class="btn-wrapper">
+            <button (click)="createUser()" mat-raised-button>
+              BENUTZER ANLEGEN
+            </button>
+          </div>
+      </div>
+    </div>

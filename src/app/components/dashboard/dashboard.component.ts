@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as moment from 'moment';
 
 
 @Component({
@@ -8,19 +9,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  user: any;
+  user: boolean;
+  today: any;
+  currentUser: string;
 
 
   constructor() { }
 
   ngOnInit() {
+    this.user = false;
   }
+
 
 
 
 
   createUser() {
     this.user = true;
+  }
+
+  showCurrentDate() {
+    this.today = moment().format('LLLL');
+    return this.today;
+  }
+
+  showCurrentUser() {
+    return 'Hello Team Prog!';
   }
 
 
