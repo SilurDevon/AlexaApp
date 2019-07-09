@@ -10,6 +10,8 @@ import * as moment from 'moment';
 export class DashboardComponent implements OnInit {
 
   user: boolean;
+  patient: boolean;
+  dashboard: boolean;
   today: any;
   currentUser: string;
 
@@ -18,14 +20,29 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.user = false;
+    this.patient = false;
+    this.dashboard = true;
   }
 
 
 
+showDashboard() {
+  this.dashboard = true;
+  this.user = false;
+  this.patient = false;
 
+}
 
   createUser() {
     this.user = true;
+    this.dashboard = false;
+    this.patient = false;
+  }
+
+  createPatient() {
+    this.patient = true;
+    this.dashboard = false;
+    this.user = false;
   }
 
   showCurrentDate() {
@@ -36,7 +53,5 @@ export class DashboardComponent implements OnInit {
   showCurrentUser() {
     return 'Hello Team Prog!';
   }
-
-
 
 }

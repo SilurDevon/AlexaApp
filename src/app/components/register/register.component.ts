@@ -9,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class RegisterComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(
+    // public id: number,
+    // public name: string,
+    // public power: string,
+    // public alterEgo?: string
+  ) { }
 
   ngOnInit() {
   }
