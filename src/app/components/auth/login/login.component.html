@@ -4,9 +4,7 @@
   </div>
   <div class="section-wrapper right">
     <div class="logo-wrapper">
-      <img class="logo"
-           src="../../../../assets/graphics/logo-1933884_1280.png"
-           alt="Logo">
+      <img class="logo" src="../../../../assets/graphics/logo-1933884_1280.png" alt="Logo">
     </div>
     <div class="login">
       <div class="title">User Login</div>
@@ -42,6 +40,7 @@
         <div class="btn-wrapper">
           <button [disabled]="loginFormGroup.invalid"
                   mat-raised-button>
+          <button (click)="login()" mat-raised-button>
             LOGIN
           </button>
         </div>

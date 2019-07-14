@@ -8,7 +8,9 @@ import {LoginModule} from './components/auth/login/login.module';
 import {DashboardModule} from './components/dashboard/dashboard.module';
 import {MaterialModule} from './shared/material.module';
 import {StartComponent} from './components/start/start.component';
-import {UserModule} from './components/user/user.module';
+import {RegisterModule} from './components/register/register.module';
+import {TodoModule} from './components/todo/todo.module';
+import {PatientsModule} from './components/patients/patients.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import {UserModule} from './components/user/user.module';
     LoginModule,
     DashboardModule,
     MaterialModule,
-    UserModule,
+    RegisterModule,
+    TodoModule,
+    PatientsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

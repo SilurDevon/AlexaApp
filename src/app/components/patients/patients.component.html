@@ -1,0 +1,33 @@
+<div class="title">Neuen Patienten anlegen</div>
+<mat-divider></mat-divider>
+<div class="form-container">
+
+  <div class="personaldata-group">
+    <mat-form-field>
+      <input formControlName="vorname" matInput placeholder="Vorname" type="name">
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="nachnahme" matInput placeholder="Nachnahme" type="name">
+    </mat-form-field>
+  </div>
+
+  <div class="reside-group">
+    <mat-form-field>
+      <input formControlName="geschlecht" matInput placeholder="Geschlecht" type="sex">
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="birthday" matInput placeholder="Geburtsdatum" type="date">
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="pflegegrad" matInput placeholder="Pflegegrad" type="number">
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="zimmernummer" matInput placeholder="Zimmernummer" type="number">
+    </mat-form-field>
+    <div class="btn-wrapper">
+      <button mat-raised-button>
+        PATIENTEN ANLEGEN
+      </button>
+    </div>
+  </div>
+</div>

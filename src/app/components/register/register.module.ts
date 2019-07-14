@@ -9,25 +9,22 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatMenuModule} from '@angular/material/menu';
 
-import {DashboardComponent} from './dashboard.component';
-import {RegisterModule} from '../register/register.module';
-import {PatientsModule} from '../patients/patients.module';
+import {RegisterComponent} from './register.component';
 
 
 @NgModule({
-  imports: [RegisterModule, PatientsModule,
-    CommonModule, BrowserModule,
+  imports: [CommonModule, BrowserModule,
     MatSidenavModule, MatButtonModule,
     MatFormFieldModule, MatInputModule,
     FlexLayoutModule, MatDividerModule,
     MatMenuModule],
   declarations: [
-    DashboardComponent
+    RegisterComponent,
   ],
   providers: [],
   exports: [
-    DashboardComponent
+    RegisterComponent,
   ]
 })
-export class DashboardModule {
+export class RegisterModule {
 }

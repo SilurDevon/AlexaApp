@@ -1,25 +1,57 @@
 <mat-sidenav-container class="dashboard">
   <mat-sidenav class="sidenav" mode="side" position="start" opened>
-      <img class="bistum" src="assets\graphics\bistum.jpg" alt="" />
-    <button mat-raised-button>
-      <img class="dashboard-icon" src="assets\graphics\male-user-shadow.png" alt="" />
+    <img class="bistum" src="assets\graphics\bistum.jpg" alt="" />
+
+    <button class="button" mat-raised-button (click)="showDashboard()">
+      <img class="icon" src="assets\graphics\male-user-shadow.png" alt="" />
       <h3> Dashboard </h3>
     </button>
-    <button mat-raised-button>
-      <img class="dashboard-icon" src="assets\graphics\form.png" alt="" />
+
+    <button class="button" mat-raised-button>
+      <img class="icon" src="assets\graphics\form.png" alt="" />
       <h3> Aufgaben </h3>
     </button>
-    <button mat-raised-button>
-      <img class="dashboard-icon" src="assets\graphics\multiple-users-silhouette.png" alt="" />
+
+    <button class="button" mat-button [matMenuTriggerFor]="menu_personal">
+      <img class="icon" src="assets\graphics\multiple-users-silhouette.png" alt="" />
       <h3> Personal </h3>
     </button>
-    <button mat-raised-button>
-      <img class="dashboard-icon" src="assets\graphics\old-couple.png" alt="" />
+    <mat-menu #menu_personal="matMenu">
+      <button mat-menu-item (click)="createUser()">Neuen App-Benutzer anlegen</button>
+      <button mat-menu-item> Benutzer verwalten </button>
+    </mat-menu>
+
+
+
+    
+    <button class="button" mat-button [matMenuTriggerFor]="menu_patients">
+      <img class="icon" src="assets\graphics\old-couple.png" alt="" />
       <h3> Patienten </h3>
     </button>
+    <mat-menu #menu_patients="matMenu">
+      <button mat-menu-item (click)="createPatient()">Neuen Patienten anlegen</button>
+      <button mat-menu-item> Patientenliste anzeigen </button>
+    </mat-menu>
+
   </mat-sidenav>
 
-  <mat-sidenav-content>
-    <h2>Main content</h2>
+  <mat-sidenav-content fxFlexFill class="sidenav-content">
+      <div *ngIf="dashboard == true" class="hello-screen">
+          <div class="title"> {{showCurrentUser()}} </div>
+          <div class="title">Heute ist  {{showCurrentDate()}} </div>
+       </div>
+
+    <div *ngIf="user == true">
+      <app-register></app-register>
+    </div>
+
+    <div *ngIf="patient == true">
+      <app-patients></app-patients>
+    </div>
+
+
+
+
+
   </mat-sidenav-content>
 </mat-sidenav-container>
