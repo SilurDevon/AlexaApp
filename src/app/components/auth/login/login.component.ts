@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -13,9 +14,9 @@ export class LoginComponent implements OnInit {
 
   errorMessage: string;
 
-  constructor() {
+  constructor(private router: Router) {
     this.loginFormGroup = new FormGroup({
-      username: new FormControl(),
+      email: new FormControl(),
       password: new FormControl(),
     });
   }
@@ -24,8 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.loginFailed = true;
-    this.errorMessage = 'Incorrect Email or Password';
+    this.router.navigate(['core']).then();
   }
 
   isValid(control: string) {

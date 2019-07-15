@@ -12,13 +12,13 @@
             (ngSubmit)="login()">
         <mat-form-field>
           <label>
-            <input formControlName="username"
+            <input formControlName="email"
                    matInput
-                   placeholder="Username"
+                   placeholder="Email"
                    email
                    required>
           </label>
-          <mat-error *ngIf="isValid('username')||loginFailed">
+          <mat-error *ngIf="isValid('email')||loginFailed">
             Email is required
           </mat-error>
         </mat-form-field>
@@ -40,7 +40,6 @@
         <div class="btn-wrapper">
           <button [disabled]="loginFormGroup.invalid"
                   mat-raised-button>
-          <button (click)="login()" mat-raised-button>
             LOGIN
           </button>
         </div>

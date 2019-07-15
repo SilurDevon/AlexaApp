@@ -1,0 +1,18 @@
+mat-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+
+  mat-card-title {
+    padding: 16px;
+    margin: 0;
+    color: white;
+    background-color: #6483CD;
+    box-shadow: 0 3px 10px #6483CD;
+  }
+
+  mat-card-content {
+    height: 100%;
+  }
+}

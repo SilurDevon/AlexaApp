@@ -14,13 +14,14 @@
     display: flex;
     align-items: center;
     background-color: $prime;
-    width: 12%;
+    width: 200px;
     box-shadow: 5px -1px 5px lightgray;
 
     .bistum {
       width: 100%;
       margin-bottom: 10%;
     }
+
 
     .button {
       background-color: $second;
@@ -29,6 +30,10 @@
       height: auto;
       align-self: center;
       margin-bottom: 20px;
+
+      &.active {
+        background-color: #6483CD !important;
+      }
 
       .icon {
         width: 20%;
@@ -39,25 +44,25 @@
       h3 {
         margin: 0;
         padding: 5px 0 5px 0;
-        font-size: 1.2vw;
+        font-size: 1.2em;
       }
     }
   }
 
   .sidenav-content {
 
-    .hello-screen{
+    .hello-screen {
       display: flex;
       flex-flow: column;
       margin: 7% 7%;
 
-    .title {
-      font-size: 32px;
-      font-weight: 300;
-      color: #666;
-      margin-bottom: 5%;
+      .title {
+        font-size: 32px;
+        font-weight: 300;
+        color: #666;
+        margin-bottom: 5%;
+      }
     }
-  }
 
 
   }

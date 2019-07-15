@@ -12,6 +12,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {DashboardComponent} from './dashboard.component';
 import {RegisterModule} from '../register/register.module';
 import {PatientsModule} from '../patients/patients.module';
+import {RouterModule} from '@angular/router';
+import {MatIconModule} from '@angular/material';
 
 
 @NgModule({
@@ -20,7 +22,7 @@ import {PatientsModule} from '../patients/patients.module';
     MatSidenavModule, MatButtonModule,
     MatFormFieldModule, MatInputModule,
     FlexLayoutModule, MatDividerModule,
-    MatMenuModule],
+    MatMenuModule, RouterModule, MatIconModule],
   declarations: [
     DashboardComponent
   ],

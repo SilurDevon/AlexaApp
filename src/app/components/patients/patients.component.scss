@@ -1,37 +1,43 @@
-@import './src/app/components/vars';
+@import '../../shared/scss/_matCard.scss';
 
-.title {
-  font-size: 32px;
-  font-weight: 300;
-  color: #666;
-  margin: 40px 7%;
-}
+.wrapper {
+  padding: 30px 210px 30px 30px;
+  overflow: auto;
+  height: 100%;
 
-.form-container {
-  display: flex;
-  padding: 7% 0;
-
-  .personaldata-group {
+  .options {
     display: flex;
-    flex-flow: column;
-    width: 30%;
-    margin-left: 7%;
+    align-items: center;
+    margin: 0 15px;
+
+    .search {
+      width: 100%;
+
+      .mat-form-field {
+        font-size: 14px;
+        width: 120px;
+      }
+
+      > * {
+        margin-right: 10px;
+      }
+    }
+
+    button {
+      color: white;
+      background-color: #69b0ff;
+      margin-bottom: -55px;
+      z-index: 1000;
+    }
   }
 
-  .reside-group {
-    display: flex;
-    flex-flow: column;
-    width: 30%;
-    margin-left: 7%;
+  table {
+    width: 100%;
+    cursor: pointer;
+    border-top: 1px solid lightgrey;
 
-    .btn-wrapper {
-      display: flex;
-      justify-content: flex-end;
-      margin: 20px 10px 0 0;
-
-      button {
-        width: auto;
-      }
+    .mat-row:hover {
+      background-color: #eee;
     }
   }
 }

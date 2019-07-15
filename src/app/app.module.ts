@@ -7,15 +7,14 @@ import {AppComponent} from './app.component';
 import {LoginModule} from './components/auth/login/login.module';
 import {DashboardModule} from './components/dashboard/dashboard.module';
 import {MaterialModule} from './shared/material.module';
-import {StartComponent} from './components/start/start.component';
 import {RegisterModule} from './components/register/register.module';
 import {TodoModule} from './components/todo/todo.module';
 import {PatientsModule} from './components/patients/patients.module';
+import {StartModule} from './components/start/start.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StartComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +25,8 @@ import {PatientsModule} from './components/patients/patients.module';
     MaterialModule,
     RegisterModule,
     TodoModule,
-    PatientsModule
+    PatientsModule,
+    StartModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
