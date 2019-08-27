@@ -9,45 +9,17 @@ import * as moment from 'moment';
 })
 export class DashboardComponent implements OnInit {
 
-  user: boolean;
-  patient: boolean;
-  dashboard: boolean;
-  today: any;
-  currentUser: string;
 
 
   constructor() { }
 
   ngOnInit() {
-    this.user = false;
-    this.patient = false;
-    this.dashboard = true;
+
   }
 
-
-
-showDashboard() {
-  this.dashboard = true;
-  this.user = false;
-  this.patient = false;
-
-}
-
-  createUser() {
-    this.user = true;
-    this.dashboard = false;
-    this.patient = false;
-  }
-
-  createPatient() {
-    this.patient = true;
-    this.dashboard = false;
-    this.user = false;
-  }
 
   showCurrentDate() {
-    this.today = moment().format('LLLL');
-    return this.today;
+    return moment().format('LLLL');
   }
 
   showCurrentUser() {

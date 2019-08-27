@@ -2,7 +2,7 @@
   <mat-sidenav class="sidenav" mode="side" position="start" opened>
     <img class="bistum" src="assets\graphics\bistum.jpg" alt=""/>
 
-    <button class="button" mat-raised-button (click)="showDashboard()">
+    <button class="button" mat-raised-button (click)="showDashboard()" routerLink="/core">
       <i class="fas fa-user fa-2x"></i>
       Dashboard
     </button>
@@ -38,8 +38,8 @@
   <mat-sidenav-content fxFlexFill class="sidenav-content">
     <router-outlet></router-outlet>
     <!--    <div *ngIf="dashboard == true" class="hello-screen">-->
-    <!--      <div class="title"> {{showCurrentUser()}} </div>-->
-    <!--      <div class="title">Heute ist  {{showCurrentDate()}} </div>-->
+         <!-- <div class="title"> {{showCurrentUser()}} </div>
+         <div class="title">Heute ist  {{showCurrentDate()}} </div> -->
     <!--    </div>-->
 
     <!--    <div *ngIf="user == true">-->
