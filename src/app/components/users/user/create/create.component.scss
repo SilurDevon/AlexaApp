@@ -1,0 +1,16 @@
+@import "../../../../shared/scss/_matCard.scss";
+
+.wrapper {
+  padding: 30px 210px 30px 30px;
+  overflow: auto;
+  height: 100%;
+
+  mat-card-content {
+    padding: 16px;
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

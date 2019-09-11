@@ -7,19 +7,21 @@
       Dashboard
     </button>
 
-    <button class="button" mat-raised-button>
-      <i class="fas fa-tasks fa-2x"></i>
-      Aufgaben
-    </button>
+    <button class="button"
+    mat-button 
+    routerLink="todo" 
+    routerLinkActive="active">
+    <i class="fas fa-users fa-2x"></i>
+    Aufgaben
+  </button>
 
-    <button class="button" mat-button [matMenuTriggerFor]="menu_personal">
-      <i class="fas fa-users-cog fa-2x"></i>
-      Personal
-    </button>
-    <mat-menu #menu_personal="matMenu">
-      <button mat-menu-item (click)="createUser()">Neuen App-Benutzer anlegen</button>
-      <button mat-menu-item> Benutzer verwalten</button>
-    </mat-menu>
+  <button class="button" 
+    mat-button 
+    routerLink="users" 
+    routerLinkActive="active">
+    <i class="fas fa-users fa-2x"></i>
+    Personal
+  </button>
 
 
     <button class="button"

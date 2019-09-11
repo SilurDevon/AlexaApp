@@ -16,6 +16,10 @@ export class RegisterComponent implements OnInit {
     // public alterEgo?: string
   ) { }
 
+  newuser() {
+    alert('Benutzer angelegt!');
+  }
+
   ngOnInit() {
   }
 
