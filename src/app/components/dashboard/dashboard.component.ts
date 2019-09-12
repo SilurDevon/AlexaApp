@@ -18,12 +18,8 @@ export class DashboardComponent implements OnInit {
   }
 
 
-  showCurrentDate() {
+  showDashboard() {
     return moment().format('LLLL');
-  }
-
-  showCurrentUser() {
-    return 'Hello Team Prog!';
   }
 
 }

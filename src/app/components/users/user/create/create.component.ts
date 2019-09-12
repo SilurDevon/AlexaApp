@@ -16,6 +16,9 @@ export class CreateUserComponent implements OnInit {
     {id: '0'},
     {id: '1'},
     {id: '2'},
+    {id: '3'},
+    {id: '4'},
+    {id: '5'}
   ];
 
 
@@ -24,11 +27,11 @@ export class CreateUserComponent implements OnInit {
 
   ngOnInit() {
     this.createUser = new FormGroup({
-      preName: new FormControl(),
+      firstName: new FormControl(),
       lastName: new FormControl(),
-      username: new FormControl(Validators.required),
-      passwd: new FormControl(Validators.required),
-      email: new FormControl(Validators.required),
+      username: new FormControl(),
+      passwd: new FormControl(),
+      email: new FormControl(),
     });
   }
 
@@ -38,9 +41,9 @@ export class CreateUserComponent implements OnInit {
     this.user = {
       id: this.usersService.createNewID(),
       lastName: this.createUser.value.lastName,
-      firstName: this.createUser.value.preName,
-      username: this.createUser.value.userName,
-      passwd: this.createUser.value.passwa,
+      firstName: this.createUser.value.firstName,
+      username: this.createUser.value.username,
+      passwd: this.createUser.value.passwd,
       email: this.createUser.value.email,
     };
     this.usersService.addUser(this.user);

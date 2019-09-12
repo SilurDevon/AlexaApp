@@ -10,6 +10,8 @@ import {MaterialModule} from './shared/material.module';
 import {RegisterModule} from './components/register/register.module';
 import {TodoModule} from './components/todo/todo.module';
 import {PatientsModule} from './components/patients/patients.module';
+import {UsersModule} from './components/users/users.module';
+import {CarersModule} from './components/carers/carers.module';
 import {StartModule} from './components/start/start.module';
 
 @NgModule({
@@ -26,6 +28,8 @@ import {StartModule} from './components/start/start.module';
     RegisterModule,
     TodoModule,
     PatientsModule,
+    UsersModule,
+    CarersModule,
     StartModule,
   ],
   providers: [],

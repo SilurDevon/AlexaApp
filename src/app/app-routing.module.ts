@@ -14,6 +14,11 @@ import {ViewUserComponent} from './components/users/user/view/view.component';
 import {EditUserComponent} from './components/users/user/edit/edit.component';
 import {CreateUserComponent} from './components/users/user/create/create.component';
 
+import {CarersComponent} from './components/carers/carers.component';
+import {ViewCarerComponent} from './components/carers/care/view/view.component';
+import {EditCarerComponent} from './components/carers/care/edit/edit.component';
+import {CreateCarerComponent} from './components/carers/care/create/create.component';
+
 import {TodoComponent} from './components/todo/todo.component';
 import {RegisterComponent} from './components/register/register.component';
 
@@ -33,6 +38,11 @@ const routes: Routes = [
       {path: 'users/create', component: CreateUserComponent},
       {path: 'users/:id/view', component: ViewUserComponent},
       {path: 'users/:id/edit', component: EditUserComponent},
+
+      {path: 'carers', component: CarersComponent},
+      {path: 'carers/create', component: CreateCarerComponent},
+      {path: 'carers/:id/view', component: ViewCarerComponent},
+      {path: 'carers/:id/edit', component: EditCarerComponent},
 
       {path: 'todo', component: TodoComponent},
       {path: 'register', component: RegisterComponent},

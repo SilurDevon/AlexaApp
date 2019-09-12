@@ -1,7 +1,7 @@
 <div class="wrapper">
   <mat-card class="mat-elevation-z3">
     <mat-card-title>
-      App-Benutzer
+      Pflegemitarbeiter
     </mat-card-title>
     <mat-card-content>
       <div class="options">
@@ -12,50 +12,63 @@
                    matInput>
           </mat-form-field>
         </div>
-        <button mat-mini-fab matTooltip="Neuen Benutzer anlegen">
-          <i (click)="createUser()" class="fas fa-plus"></i>
+
+        <button mat-mini-fab matTooltip="Neuen Mitarbeiter anlegen">
+          <i (click)="createCarer()" class="fas fa-plus"></i>
         </button>
       </div>
+
       <table [dataSource]="dataSource" mat-table matSort>
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
           <td mat-cell *matCellDef="let element"> {{element.id}} </td>
         </ng-container>
+
         <ng-container matColumnDef="firstName">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Vorname</th>
           <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
         </ng-container>
+
         <ng-container matColumnDef="lastName">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
           <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
         </ng-container>
-        <ng-container matColumnDef="username">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Benutzername</th>
-            <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+
+        <ng-container matColumnDef="persnr">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Personal ID</th>
+            <td mat-cell *matCellDef="let element"> {{element.persnr}} </td>
           </ng-container>
-          <ng-container matColumnDef="passwd">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header>Passwort</th>
-              <td mat-cell *matCellDef="let element"> {{element.passwd}} </td>
+
+          <ng-container matColumnDef="tel">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Telefon</th>
+              <td mat-cell *matCellDef="let element"> {{element.tel}} </td>
             </ng-container>
-        <ng-container matColumnDef="email">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
-          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+
+        <ng-container matColumnDef="quali_id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>QualifikationsID</th>
+          <td mat-cell *matCellDef="let element"> {{element.quali_id}} </td>
         </ng-container>
+
+        <ng-container matColumnDef="wb_id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>WohnbereichID</th>
+          <td mat-cell *matCellDef="let element"> {{element.wb_id}} </td>
+        </ng-container>
+
         <tr mat-header-row
             *matHeaderRowDef="displayedColumns;
             sticky: true"></tr>
         <tr mat-row
             *matRowDef="let row;
             columns: displayedColumns;"
-            (click)="viewUser(row)"
+            (click)="viewCarer(row)"
             (contextmenu)="openMenu(row, menuTrigger)"
             #menuTrigger="matMenuTrigger"
             [matMenuTriggerFor]="menu"></tr>
       </table>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="view()">Benutzerdaten ansehen</button>
-        <button mat-menu-item (click)="edit()">Benutzerdaten bearbeiten</button>
-        <button mat-menu-item (click)="delete()">Benutzer löschen</button>
+        <button mat-menu-item (click)="view()">Mitarbeiterdaten ansehen</button>
+        <button mat-menu-item (click)="edit()">Mitarbeiterdaten bearbeiten</button>
+        <button mat-menu-item (click)="delete()">Mitarbeiterdaten löschen</button>
       </mat-menu>
     </mat-card-content>
   </mat-card>

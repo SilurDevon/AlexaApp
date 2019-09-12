@@ -12,7 +12,7 @@ import {User} from './user';
 })
 
 export class UsersComponent implements OnInit, OnChanges, OnDestroy {
-  displayedColumns: string[] = ['id', 'username', 'passwd', 'firstname', 'lastname', 'email'];
+  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'username', 'passwd',  'email'];
   dataSource: MatTableDataSource<User>;
   users: User[] = [];
 
