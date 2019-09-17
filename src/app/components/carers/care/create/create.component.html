@@ -35,13 +35,13 @@
         </mat-form-field>
 
         <mat-form-field>
-          <mat-label>Personalnummer</mat-label>
-          <mat-select formControlName="persnr"
-                      required>
-            <mat-option *ngFor="let carer of carers" [value]="carer.persnr">
-              {{carer.persnr}}
-            </mat-option>
-          </mat-select>
+          <label>
+            <input formControlName="persnr"
+                   matInput
+                   placeholder="Personalnummer"
+                   type="number"
+                   required>
+          </label>
         </mat-form-field>
 
         <mat-form-field>
@@ -74,9 +74,13 @@
           </label>
         </mat-form-field>
         
-        <button mat-raised-button [disabled]="createCarer.invalid">
-          Mitarbeiter anlegen
+        <!-- <button mat-raised-button [disabled]="createCarer.invalid" -->
+       <button mat-raised-button
+        routerLink="carers"
+        routerLinkActive="active">
+        Mitarbeiter anlegen
         </button>
+
       </form>
     </mat-card-content>
   </mat-card>

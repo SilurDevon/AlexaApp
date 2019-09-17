@@ -27,6 +27,7 @@ export class CreateCarerComponent implements OnInit {
 
   ngOnInit() {
     this.createCarer = new FormGroup({
+      id: new FormControl(),
       firstName: new FormControl(),
       lastName: new FormControl(),
       persnr: new FormControl(),
@@ -48,5 +49,9 @@ export class CreateCarerComponent implements OnInit {
       wb_id: this.createCarer.value.wb_id,
     };
     this.carersService.addCarer(this.carer);
+  }
+
+  confirmNewCarer(){
+    alert('Neuer Mitarbeiter angelegt.');
   }
 }

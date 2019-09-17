@@ -27,6 +27,7 @@ export class CreateUserComponent implements OnInit {
 
   ngOnInit() {
     this.createUser = new FormGroup({
+      id: new FormControl(),
       firstName: new FormControl(),
       lastName: new FormControl(),
       username: new FormControl(),
