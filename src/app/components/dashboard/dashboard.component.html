@@ -11,7 +11,7 @@
     mat-button 
     routerLink="todo" 
     routerLinkActive="active">
-    <i class="fas fa-users fa-2x"></i>
+    <i class="fas fa-tasks fa-2x"></i>
     Aufgaben
   </button>
 
@@ -19,7 +19,7 @@
     mat-button 
     routerLink="users" 
     routerLinkActive="active">
-    <i class="fas fa-users fa-2x"></i>
+    <i class="fas fa-user-tag fa-2x"></i>
     App-Benutzer
   </button>
 
@@ -27,7 +27,7 @@
     mat-button 
     routerLink="carers" 
     routerLinkActive="active">
-    <i class="fas fa-users fa-2x"></i>
+    <i class="fas fa-user-nurse fa-2x"></i>
     Pflegepersonal
   </button>
 
@@ -40,9 +40,11 @@
       Patients
     </button>
 
-    <div>
-      <i routerLink="/login" class="fas fa-sign-out-alt fa-2x"></i>
-    </div>
+        <button class="abmelden" mat-button routerLink="/login" routerLinkActive="active">
+          <i class="fas fa-sign-out-alt fa-2x"></i>
+          Abmelden
+        </button>
+
   </mat-sidenav>
 
   <mat-sidenav-content fxFlexFill class="sidenav-content">

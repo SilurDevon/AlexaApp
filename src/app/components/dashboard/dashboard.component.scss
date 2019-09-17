@@ -22,6 +22,16 @@
       margin-bottom: 10%;
     }
 
+    .abmelden{
+      background-color: rgb(255, 106, 106);
+      color: white;
+      width: 100%;
+      height: auto;
+      align-self: center;
+      margin-top: 40px;
+
+    }
+
 
     .button {
       background-color: $second;
@@ -31,14 +41,10 @@
       align-self: center;
       margin-bottom: 20px;
 
+
+
       &.active {
         background-color: #6483CD !important;
-      }
-
-      .icon {
-        width: 20%;
-        filter: invert(100%);
-        padding-top: 5px;
       }
 
       h3 {
