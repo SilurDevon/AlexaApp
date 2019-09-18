@@ -1,0 +1,78 @@
+<div class="wrapper">
+  <mat-card>
+    <mat-card-title>
+      Neue Kontaktperson anlegen
+    </mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="createContact"
+            (ngSubmit)="submit()">
+            <mat-form-field>
+              <label>
+                <input formControlName="id"
+                       matInput
+                       placeholder="Konaktperson-ID"
+                       type="number"
+                       required>
+              </label>
+            </mat-form-field>
+        <mat-form-field>
+          <label>
+            <input formControlName="firstName"
+                   matInput
+                   placeholder="Vorname"
+                   type="name"
+                   required>
+          </label>
+        </mat-form-field>
+        <mat-form-field>
+          <label>
+            <input formControlName="lastName"
+                   matInput
+                   placeholder="Nachname"
+                   type="name"
+                   required>
+          </label>
+        </mat-form-field>
+
+        <mat-form-field>
+          <label>
+            <input formControlName="relation"
+                   matInput
+                   placeholder="Verwandtschaft zum Patienten"
+                   type="text"
+                   required>
+          </label>
+        </mat-form-field>
+
+        <mat-form-field>
+          <label>
+            <input formControlName="patient"
+                   matInput
+                   placeholder="Name des Patienten: "
+                   type="text"
+                   required>
+          </label>
+        </mat-form-field>
+
+        <mat-form-field>
+          <label>
+            <input formControlName="tel"
+                   matInput
+                   placeholder="Telefon"
+                   type="number"
+                   required>
+          </label>
+        </mat-form-field>
+
+  
+        
+      <button mat-raised-button [disabled]="createContact.invalid"
+       routerLink="/contacts"
+        routerLinkActive="active">
+        Kontaktperson anlegen
+        </button>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

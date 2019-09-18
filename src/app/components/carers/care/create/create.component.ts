@@ -51,7 +51,7 @@ export class CreateCarerComponent implements OnInit {
     this.carersService.addCarer(this.carer);
   }
 
-  confirmNewCarer(){
+  confirmNewCarer() {
     alert('Neuer Mitarbeiter angelegt.');
   }
 }

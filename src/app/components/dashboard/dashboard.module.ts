@@ -14,12 +14,13 @@ import {RegisterModule} from '../register/register.module';
 import {PatientsModule} from '../patients/patients.module';
 import {UsersModule} from '../users/users.module';
 import {CarersModule} from '../carers/carers.module';
+import {ContactsModule} from '../contacts/contacts.module';
 import {RouterModule} from '@angular/router';
 import {MatIconModule} from '@angular/material';
 
 
 @NgModule({
-  imports: [RegisterModule, PatientsModule, UsersModule, CarersModule,
+  imports: [RegisterModule, PatientsModule, UsersModule, CarersModule, ContactsModule,
     CommonModule, BrowserModule,
     MatSidenavModule, MatButtonModule,
     MatFormFieldModule, MatInputModule,

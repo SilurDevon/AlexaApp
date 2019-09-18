@@ -1,0 +1,72 @@
+<div class="wrapper">
+  <mat-card class="mat-elevation-z3">
+    <mat-card-title>
+      Kontaktpersonen
+    </mat-card-title>
+    <mat-card-content>
+      <div class="options">
+        <div class="search">
+          <i class="fas fa-search fa-lg"></i>
+          <mat-form-field>
+            <input (keyup)="applyFilter($event.target['value'])"
+                   matInput>
+          </mat-form-field>
+        </div>
+
+        <button mat-mini-fab matTooltip="Neue Kontaktperson anlegen">
+          <i (click)="createContact()" class="fas fa-plus"></i>
+        </button>
+      </div>
+
+      <table [dataSource]="dataSource" mat-table matSort>
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="firstName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Vorname</th>
+          <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="lastName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+          <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="relation">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Verwandtschaft</th>
+            <td mat-cell *matCellDef="let element"> {{element.relation}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="patient">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Patient</th>
+            <td mat-cell *matCellDef="let element"> {{element.patient}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="tel">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Telefon</th>
+              <td mat-cell *matCellDef="let element"> {{element.tel}} </td>
+            </ng-container>
+
+        <tr mat-header-row
+            *matHeaderRowDef="displayedColumns;
+            sticky: true"></tr>
+        <tr mat-row
+            *matRowDef="let row;
+            columns: displayedColumns;"
+            (click)="viewContact(row)"
+            (contextmenu)="openMenu(row, menuTrigger)"
+            #menuTrigger="matMenuTrigger"
+            [matMenuTriggerFor]="menu"></tr>
+      </table>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="view()">Kontaktperson ansehen</button>
+        <button mat-menu-item (click)="edit()">Kontaktperson bearbeiten</button>
+        <button mat-menu-item (click)="delete()">Kontaktperson löschen</button>
+      </mat-menu>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
