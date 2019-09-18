@@ -9,7 +9,7 @@ import {Patient} from '../../patient';
   styleUrls: ['./view.component.scss'],
 })
 export class ViewComponent implements OnInit {
-  patient: Patient;
+  private patient: Patient;
 
   constructor(private route: ActivatedRoute,
               private patientsService: PatientsService) {
@@ -19,8 +19,9 @@ export class ViewComponent implements OnInit {
     this.route.params
       .subscribe(
         (params: Params) => {
-          const id = 'id';
-          this.patient = this.patientsService.getPatientWithID(params[id]);
+          const id = params.id;
+          this.patientsService.getPatients()
+            .subscribe((data: any) => this.patient = data.response[id]);
         },
       );
   }

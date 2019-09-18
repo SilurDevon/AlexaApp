@@ -1,9 +1,10 @@
-<div>
-  {{patient.id}}
-  {{patient.lastName}}
-  {{patient.firstName}}
-  {{patient.birthDate | date:'dd.MM.yyyy'}}
-  {{patient.pflegeGrad}}
-  {{patient.gender}}
-  {{patient.roomNumber}}
+<div *ngIf="patient">
+  {{patient.bewohner_id}}
+  {{patient.nachname}}
+  {{patient.vorname}}
+  {{patient.geburtsdatum}}
+  {{patient.pflegegrad}}
+  {{patient.geschlecht}}
+  {{patient.zimmernummer}}
+  {{patient.wohnbereich}}
 </div>

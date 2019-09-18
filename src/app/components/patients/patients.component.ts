@@ -1,8 +1,7 @@
-import {Component, OnChanges, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatSort, MatTableDataSource} from '@angular/material';
 import {Router} from '@angular/router';
 import {PatientsService} from './patients.service';
-import {Subscription} from 'rxjs';
 import {Patient} from './patient';
 
 @Component({
@@ -11,32 +10,41 @@ import {Patient} from './patient';
   styleUrls: ['./patients.component.scss'],
 })
 
-export class PatientsComponent implements OnInit, OnChanges, OnDestroy {
-  displayedColumns: string[] = ['id', 'lastName', 'firstName', 'roomNumber', 'pflegeGrad', 'birthDate', 'gender'];
+export class PatientsComponent implements OnInit {
+  /**
+   * definition of our Columns
+   */
+  displayedColumns: string[] = [
+    'bewohner_id',
+    'nachname',
+    'vorname',
+    'zimmernummer',
+    'wohnbereich',
+    'pflegegrad',
+    'geburtsdatum',
+    'geschlecht'];
+
+  /**
+   * data which is shown in the table
+   */
   dataSource: MatTableDataSource<Patient>;
-  patients: Patient[] = [];
 
   rightClickSelect: Patient;
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
-
-  private patientsSubscription: Subscription;
 
   constructor(private router: Router,
               private patientsService: PatientsService) {
   }
 
   ngOnInit() {
-    this.patients = this.patientsService.getPatients();
-    this.patientsSubscription = this.patientsService.patientsUpdated.subscribe(() => {
-      this.patients = this.patientsService.getPatients();
-    });
-
-    this.dataSource = new MatTableDataSource(this.patients);
-    this.dataSource.sort = this.sort;
-  }
-
-  ngOnChanges() {
+    this.patientsService
+      .getPatients()
+      .subscribe(
+        (data: any) => {
+          this.dataSource = new MatTableDataSource<Patient>(data.response);
+          this.dataSource.sort = this.sort;
+        });
   }
 
   applyFilter(filterValue) {
@@ -44,7 +52,7 @@ export class PatientsComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   viewPatient(patient: Patient) {
-    this.router.navigate(['core/patients', patient.id, 'view']).then();
+    this.router.navigate(['core/patients', patient.bewohner_id, 'view']).then();
   }
 
 
@@ -59,21 +67,14 @@ export class PatientsComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   view() {
-    this.router.navigate(['core/patients', this.rightClickSelect.id, 'view']).then();
+    this.router.navigate(['core/patients', this.rightClickSelect.bewohner_id, 'view']).then();
   }
 
   edit() {
-    this.router.navigate(['core/patients', this.rightClickSelect.id, 'edit']).then();
+    this.router.navigate(['core/patients', this.rightClickSelect.bewohner_id, 'edit']).then();
   }
 
   delete() {
-    this.patientsService.deletePatient(this.rightClickSelect);
-    this.patientsSubscription = this.patientsService.patientsUpdated.subscribe(() => {
-      this.patients = this.patientsService.getPatients();
-    });
-  }
-
-  ngOnDestroy() {
-    this.patientsSubscription.unsubscribe();
+    // this.patientsService.deletePatient(this.rightClickSelect);
   }
 }

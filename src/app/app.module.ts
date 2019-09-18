@@ -13,6 +13,7 @@ import {PatientsModule} from './components/patients/patients.module';
 import {UsersModule} from './components/users/users.module';
 import {CarersModule} from './components/carers/carers.module';
 import {StartModule} from './components/start/start.module';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {StartModule} from './components/start/start.module';
     UsersModule,
     CarersModule,
     StartModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

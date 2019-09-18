@@ -1,9 +1,10 @@
 export interface Patient {
-  id: number;
-  lastName: string;
-  firstName: string;
-  roomNumber: number;
-  pflegeGrad: number;
-  birthDate: Date;
-  gender: string;
+  bewohner_id: number;
+  nachname: string;
+  vorname: string;
+  zimmernummer: number;
+  wohnbereich: string;
+  pflegegrad: number;
+  geburtsdatum: Date;
+  geschlecht: string;
 }

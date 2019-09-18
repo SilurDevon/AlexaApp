@@ -4,6 +4,7 @@
       Patienten
     </mat-card-title>
     <mat-card-content>
+      <!--            <div *ngFor="let patient of $patients | async">{{patient|json}}</div>-->
       <div class="options">
         <div class="search">
           <i class="fas fa-search fa-lg"></i>
@@ -17,33 +18,37 @@
         </button>
       </div>
       <table [dataSource]="dataSource" mat-table matSort>
-        <ng-container matColumnDef="id">
+        <ng-container matColumnDef="bewohner_id">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
-          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.bewohner_id}} </td>
         </ng-container>
-        <ng-container matColumnDef="lastName">
+        <ng-container matColumnDef="nachname">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-          <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.nachname}} </td>
         </ng-container>
-        <ng-container matColumnDef="firstName">
+        <ng-container matColumnDef="vorname">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Vorname</th>
-          <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.vorname}} </td>
         </ng-container>
-        <ng-container matColumnDef="roomNumber">
+        <ng-container matColumnDef="zimmernummer">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Zimmernummer</th>
-          <td mat-cell *matCellDef="let element"> {{element.roomNumber}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.zimmernummer}} </td>
         </ng-container>
-        <ng-container matColumnDef="pflegeGrad">
+        <ng-container matColumnDef="wohnbereich">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Wohnbereich</th>
+          <td mat-cell *matCellDef="let element"> {{element.wohnbereich}} </td>
+        </ng-container>
+        <ng-container matColumnDef="pflegegrad">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Pflegegrad</th>
-          <td mat-cell *matCellDef="let element"> {{element.pflegeGrad}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.pflegegrad}} </td>
         </ng-container>
-        <ng-container matColumnDef="birthDate">
+        <ng-container matColumnDef="geburtsdatum">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Geburtstag</th>
-          <td mat-cell *matCellDef="let element"> {{element.birthDate | date:'dd.MM.yyyy'}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.geburtsdatum }} </td>
         </ng-container>
-        <ng-container matColumnDef="gender">
+        <ng-container matColumnDef="geschlecht">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Geschlecht</th>
-          <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.geschlecht}} </td>
         </ng-container>
         <tr mat-header-row
             *matHeaderRowDef="displayedColumns;

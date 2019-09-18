@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {PatientsService} from '../../patients.service';
-import {Patient} from '../../patient';
 
 @Component({
   selector: 'app-create',
@@ -10,12 +9,12 @@ import {Patient} from '../../patient';
 })
 export class CreateComponent implements OnInit {
   createPatient: FormGroup;
-  patient: Patient;
+  patient: any;
 
   rooms = [
-    {id: '0', roomNumber: '101'},
-    {id: '1', roomNumber: '102'},
-    {id: '2', roomNumber: '404'},
+    {id: '0', zimmernummer: '101'},
+    {id: '1', zimmernummer: '102'},
+    {id: '2', zimmernummer: '404'},
   ];
   grades = [
     {id: '0', number: '1'},
@@ -28,27 +27,41 @@ export class CreateComponent implements OnInit {
 
   ngOnInit() {
     this.createPatient = new FormGroup({
-      preName: new FormControl(),
-      lastName: new FormControl(),
-      gender: new FormControl(Validators.required),
-      birthDate: new FormControl(Validators.required),
-      roomNumber: new FormControl(Validators.required),
+      vorname: new FormControl(Validators.required),
+      nachname: new FormControl(Validators.required),
+      geschlecht: new FormControl(Validators.required),
+      geburtsdatum: new FormControl(Validators.required),
+      zimmernummer: new FormControl(Validators.required),
+      wohnbereich: new FormControl(),
       pflegeGrad: new FormControl(Validators.required),
     });
   }
 
+
   submit() {
     this.patient = {
-      id: this.patientsService.createNewID(),
-      lastName: this.createPatient.value.lastName,
-      firstName: this.createPatient.value.preName,
-      roomNumber: this.createPatient.value.roomNumber,
-      pflegeGrad: this.createPatient.value.pflegeGrad,
-      birthDate: this.createPatient.value.birthDate,
-      gender: this.createPatient.value.gender,
+      // bewohner_id: undefined,
+      nachname: this.createPatient.value.nachname,
+      vorname: this.createPatient.value.vorname,
+      zimmernummer: this.rooms[this.createPatient.value.zimmernummer].zimmernummer,
+      // wohnbereich: this.createPatient.value.wohnbereich,
+      pflegegrad: this.createPatient.value.pflegeGrad,
+      geburtsdatum: this.createPatient.value.geburtsdatum,
+      geschlecht: this.createPatient.value.geschlecht,
     };
+    // this.patientsService.getPatients()
+    //   .subscribe(
+    //     (data: any) => {
+    //       let id = 0;
+    //       for (const patientID of data.response) {
+    //         if (id <= patientID.bewohner_id) {
+    //           id = patientID.bewohner_id;
+    //         }
+    //       }
+    //       this.patient.bewohner_id = ++id;
+    //     });
+
     this.patientsService.addPatient(this.patient);
-    alert('Neuer Bewohner angelegt.');
-    this.createPatient.reset();
+    // this.createPatient.reset();
   }
 }

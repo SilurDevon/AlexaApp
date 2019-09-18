@@ -32,8 +32,6 @@ import {CreateVitalComponent} from './components/vitals/vital/create/create.comp
 import {TodoComponent} from './components/todo/todo.component';
 import {RegisterComponent} from './components/register/register.component';
 
-
-
 const routes: Routes = [
   {path: '', component: StartComponent},
   {path: 'login', component: LoginComponent},
@@ -66,10 +64,6 @@ const routes: Routes = [
 
       {path: 'todo', component: TodoComponent},
       {path: 'register', component: RegisterComponent},
-
-
-
-
     ],
   },
 ];

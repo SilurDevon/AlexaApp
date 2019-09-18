@@ -1,68 +1,29 @@
-import {Subject} from 'rxjs';
 import {Patient} from './patient';
+import {HttpClient} from '@angular/common/http';
 
 export class PatientsService {
-  patientsUpdated = new Subject();
-  private patients: Patient[] = [
-    {
-      id: 1,
-      lastName: 'Schlotterbeck',
-      firstName: 'Charlotte',
-      roomNumber: 101,
-      pflegeGrad: 2,
-      birthDate: new Date('1950-05-01'),
-      gender: 'w',
-    },
-    {
-      id: 4,
-      lastName: 'Aftermath',
-      firstName: 'Charlotte',
-      roomNumber: 101,
-      pflegeGrad: 3,
-      birthDate: new Date('1950-05-01'),
-      gender: 'w',
-    },
-    {
-      id: 3,
-      lastName: 'Kolnhasus',
-      firstName: 'Charlotte',
-      roomNumber: 404,
-      pflegeGrad: 2,
-      birthDate: new Date('1950-05-01'),
-      gender: 'm',
-    },
-  ];
+  private ROOT_URL = 'https://api.dmprojekt19.informatik.hs-fulda.de';
 
-  getPatients() {
-    return [...this.patients];
+  constructor(private http: HttpClient) {
   }
 
-  getPatientWithID(id: number) {
-    for (const patient of this.patients) {
-      if (patient.id === +id) {
-        return patient;
-      }
-    }
+  getPatients() {
+    return this.http.get<Patient>(this.ROOT_URL + '/bewohner');
   }
 
   addPatient(patient: Patient) {
-    this.patients.push(patient);
-    this.patientsUpdated.next();
+    console.log(patient);
+    return this.http.post(this.ROOT_URL + '/bewohner/new', patient).subscribe(
+      data => console.log(data),
+      err => console.log(err, patient),
+      () => console.log('Added Patient'),
+    );
+  }
+
+  getPatientWithID(id: number) {
+    return this.http.get<Patient>(this.ROOT_URL + '/bewohner' + id);
   }
 
   deletePatient(patient: Patient) {
-    const removedPatient = this.patients.indexOf(patient);
-    this.patients.splice(removedPatient, 1);
-    this.patientsUpdated.next();
-  }
-
-  createNewID() {
-    let id = 0;
-    for (const patientID of this.patients) {
-      if (id <= patientID.id) {
-        id = patientID.id;
-      }
-    }
-    return ++id;
   }
 }

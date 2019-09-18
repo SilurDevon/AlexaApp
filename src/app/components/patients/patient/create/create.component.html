@@ -8,7 +8,7 @@
             (ngSubmit)="submit()">
         <mat-form-field>
           <label>
-            <input formControlName="preName"
+            <input formControlName="vorname"
                    matInput
                    placeholder="Vorname"
                    type="name"
@@ -17,14 +17,14 @@
         </mat-form-field>
         <mat-form-field>
           <label>
-            <input formControlName="lastName"
+            <input formControlName="nachname"
                    matInput
                    placeholder="Nachname"
                    type="name"
                    required>
           </label>
         </mat-form-field>
-        <mat-radio-group formControlName="gender"
+        <mat-radio-group formControlName="geschlecht"
                          aria-label="Geschlecht"
                          required>
           <mat-radio-button value="m">Männlich</mat-radio-button>
@@ -33,7 +33,7 @@
         <mat-form-field>
           <label>
             <input [matDatepicker]="picker"
-                   formControlName="birthDate"
+                   formControlName="geburtsdatum"
                    matInput
                    placeholder="Geburtsdatum"
                    required>
@@ -43,10 +43,10 @@
         </mat-form-field>
         <mat-form-field>
           <mat-label>Zimmernummer</mat-label>
-          <mat-select formControlName="roomNumber"
+          <mat-select formControlName="zimmernummer"
                       required>
             <mat-option *ngFor="let room of rooms" [value]="room.id">
-              {{room.roomNumber}}
+              {{room.zimmernummer}}
             </mat-option>
           </mat-select>
         </mat-form-field>
