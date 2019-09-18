@@ -6,28 +6,20 @@ export class UsersService {
   private users: User[] = [
     {
       id: 1,
-      username: 'user1',
-      passwd: 'user1',
-      lastName: 'Schlotterbeck',
-      firstName: 'Charlotte',
-      email: 'email1',
+      username: 'lti',
+      passwd: '****',
+      lastName: 'Tigg',
+      firstName: 'Leo',
+      email: 'lti@fdcare.de',
     },
     {
-      id: 4,
-      username: 'user2',
-      passwd: 'user2',
-      lastName: 'Aftermath',
-      firstName: 'Charlotte',
-      email: 'email2',
+      id: 2,
+      username: 'pad',
+      passwd: '****',
+      lastName: 'Adel',
+      firstName: 'Pia',
+      email: 'pad@fdcare.de',
 
-    },
-    {
-      id: 3,
-      passwd: 'user3',
-      email: 'email3',
-      lastName: 'Kolnhasus',
-      firstName: 'Charlotte',
-      username: 'user3',
     },
   ];
 
