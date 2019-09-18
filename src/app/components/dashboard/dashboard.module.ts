@@ -15,12 +15,13 @@ import {PatientsModule} from '../patients/patients.module';
 import {UsersModule} from '../users/users.module';
 import {CarersModule} from '../carers/carers.module';
 import {ContactsModule} from '../contacts/contacts.module';
+import {VitalsModule} from '../vitals/vitals.module';
 import {RouterModule} from '@angular/router';
 import {MatIconModule} from '@angular/material';
 
 
 @NgModule({
-  imports: [RegisterModule, PatientsModule, UsersModule, CarersModule, ContactsModule,
+  imports: [RegisterModule, PatientsModule, UsersModule, CarersModule, ContactsModule, VitalsModule,
     CommonModule, BrowserModule,
     MatSidenavModule, MatButtonModule,
     MatFormFieldModule, MatInputModule,

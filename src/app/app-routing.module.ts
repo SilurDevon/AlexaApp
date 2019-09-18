@@ -24,6 +24,11 @@ import {ViewContactComponent} from './components/contacts/contact/view/view.comp
 import {EditContactComponent} from './components/contacts/contact/edit/edit.component';
 import {CreateContactComponent} from './components/contacts/contact/create/create.component';
 
+import {VitalsComponent} from './components/vitals/vitals.component';
+import {ViewVitalComponent} from './components/vitals/vital/view/view.component';
+import {EditVitalComponent} from './components/vitals/vital/edit/edit.component';
+import {CreateVitalComponent} from './components/vitals/vital/create/create.component';
+
 import {TodoComponent} from './components/todo/todo.component';
 import {RegisterComponent} from './components/register/register.component';
 
@@ -53,6 +58,11 @@ const routes: Routes = [
       {path: 'contacts/create', component: CreateContactComponent},
       {path: 'contacts/:id/view', component: ViewContactComponent},
       {path: 'contacts/:id/edit', component: EditContactComponent},
+
+      {path: 'vitals', component: VitalsComponent},
+      {path: 'vitals/create', component: CreateVitalComponent},
+      {path: 'vitals/:id/view', component: ViewVitalComponent},
+      {path: 'vitals/:id/edit', component: EditVitalComponent},
 
       {path: 'todo', component: TodoComponent},
       {path: 'register', component: RegisterComponent},

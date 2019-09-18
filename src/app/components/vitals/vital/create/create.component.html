@@ -1,0 +1,104 @@
+<div class="wrapper">
+  <mat-card>
+    <mat-card-title>
+      Neuen Vitalwerte eintragen
+    </mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="createVital"
+            (ngSubmit)="submit()">
+        <mat-form-field>
+          <label>
+            <input formControlName="vitalwerttransaktion_id"
+                   matInput
+                   placeholder="Vitalwerttransaktion-ID"
+                   type="number"
+                   required>
+          </label>
+        </mat-form-field>
+        <mat-form-field>
+          <label>
+            <input formControlName="bewohner_id"
+                   matInput
+                   placeholder="Bewohner-ID"
+                   type="number"
+                   required>
+          </label>
+        </mat-form-field>
+
+        <mat-form-field>
+          <label>
+            <input formControlName="bewohner_name"
+                   matInput
+                   placeholder="Name des Patienten"
+                   type="name"
+                   required>
+          </label>
+        </mat-form-field>
+
+        <mat-form-field>
+          <label>
+            <input formControlName="vitalwert_id"
+                   matInput
+                   placeholder="Vitalwert-ID"
+                   type="number"
+                   required>
+          </label>
+        </mat-form-field>
+
+        <mat-form-field>
+          <label>
+            <input formControlName="messwert"
+                   matInput
+                   placeholder="Messwert"
+                   type="text"
+                   required>
+          </label>
+        </mat-form-field>
+
+        <mat-form-field>
+          <label>
+            <input formControlName="pfleger_id"
+                   matInput
+                   placeholder="Pfleger-ID"
+                   type="number"
+                   required>
+          </label>
+        </mat-form-field>
+
+        <mat-form-field>
+          <label>
+            <input formControlName="pfleger_name"
+                   matInput
+                   placeholder="Pflegername"
+                   type="name"
+                   required>
+          </label>
+        </mat-form-field>
+
+        <mat-form-field>
+          <label>
+            <input formControlName="datum"
+                   matInput
+                   placeholder="Datum"
+                   type="date"
+                   required>
+          </label>
+        </mat-form-field>
+
+        <mat-form-field>
+          <label>
+            <input formControlName="zeit"
+                   matInput
+                   placeholder="Zeit"
+                   type="time"
+                   required>
+          </label>
+        </mat-form-field>
+        
+        <button mat-raised-button [disabled]="createVital.invalid">
+          Werte eintragen
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
