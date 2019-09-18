@@ -8,10 +8,7 @@ import {Contact} from '../../contact';
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.scss'],
 })
-
-
 export class CreateContactComponent implements OnInit {
-
   createContact: FormGroup;
   contact: Contact;
 

@@ -48,5 +48,7 @@ export class CreateComponent implements OnInit {
       gender: this.createPatient.value.gender,
     };
     this.patientsService.addPatient(this.patient);
+    alert('Neuer Bewohner angelegt.');
+    this.createPatient.reset();
   }
 }

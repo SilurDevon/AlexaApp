@@ -48,5 +48,7 @@ export class CreateUserComponent implements OnInit {
       email: this.createUser.value.email,
     };
     this.usersService.addUser(this.user);
+    alert('Neuer Benutzer angelegt.');
+    this.createUser.reset();
   }
 }

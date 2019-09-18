@@ -49,9 +49,7 @@ export class CreateCarerComponent implements OnInit {
       wb_id: this.createCarer.value.wb_id,
     };
     this.carersService.addCarer(this.carer);
-  }
-
-  confirmNewCarer() {
     alert('Neuer Mitarbeiter angelegt.');
+    this.createCarer.reset();
   }
 }
