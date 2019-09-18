@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {VitalsService} from '../../vitals.service';
 import {Vital} from '../../vitals';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-vital-create',
@@ -11,6 +12,8 @@ import {Vital} from '../../vitals';
 export class CreateVitalComponent implements OnInit {
   createVital: FormGroup;
   vital: Vital;
+  datum: any = moment().format('L');
+  zeit: any = moment().format('LT')
 
   vitals = [
     {id: '0'},
@@ -48,16 +51,20 @@ export class CreateVitalComponent implements OnInit {
       bewohner_id: this.createVital.value.bewohner_id,
       bewohner_name: this.createVital.value.bewohner_name,
       vitalwert_id: this.createVital.value.vitalwert_id,
+      vitalwert: this.createVital.value.vitalwert,
       messwert: this.createVital.value.messwert,
       pfleger_id: this.createVital.value.pfleger_id,
-      vitalwert: this.createVital.value.vitalwert,
       pfleger_name: this.createVital.value.pfleger_name,
-      datum: this.createVital.value.datum,
-      zeit: this.createVital.value.zeit,
+      datum: this.datum,
+      zeit: this.zeit,
 
     };
     this.vitalsService.addVital(this.vital);
     alert('Neue Werte wurden angelegt.');
     this.createVital.reset();
+  }
+
+  showDashboard() {
+    return moment().format('LLLL');
   }
 }

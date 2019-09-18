@@ -14,7 +14,7 @@ import {Vital} from './vitals';
 
 export class VitalsComponent implements OnInit, OnChanges, OnDestroy {
   displayedColumns: string[] = ['vitalwerttransaktion_id', 'bewohner_id', 'bewohner_name',
-                                'vitalwert_id', 'messwert',  'pfleger_id', 'pfleger_name',
+                                'vitalwert_id', 'vitalwert','messwert',  'pfleger_id', 'pfleger_name',
                                 'datum', 'zeit'];
   dataSource: MatTableDataSource<Vital>;
   vitals: Vital[] = [];

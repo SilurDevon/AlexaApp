@@ -10,7 +10,7 @@ export class VitalsService {
       bewohner_name: 'Charlotte Schlotterbeck',
       vitalwert_id: 7,
       vitalwert: 'Größe (cm)',
-      messwert: 1,
+      messwert: 165,
       pfleger_id: 3,
       pfleger_name: 'Antonia Musterfrau',
       datum: '2019-09-17',

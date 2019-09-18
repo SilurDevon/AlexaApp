@@ -1,7 +1,7 @@
 <div class="wrapper">
   <mat-card>
     <mat-card-title>
-      Neuen Vitalwerte eintragen
+      Neue Vitalwerte eintragen
     </mat-card-title>
     <mat-card-content>
       <form [formGroup]="createVital"
@@ -47,6 +47,16 @@
 
         <mat-form-field>
           <label>
+            <input formControlName="vitalwert"
+                   matInput
+                   placeholder="Vitalwert"
+                   type="text"
+                   required>
+          </label>
+        </mat-form-field>
+
+        <mat-form-field>
+          <label>
             <input formControlName="messwert"
                    matInput
                    placeholder="Messwert"
@@ -80,8 +90,8 @@
             <input formControlName="datum"
                    matInput
                    placeholder="Datum"
-                   type="date"
                    required>
+                   {{this.datum}}
           </label>
         </mat-form-field>
 
@@ -90,12 +100,12 @@
             <input formControlName="zeit"
                    matInput
                    placeholder="Zeit"
-                   type="time"
                    required>
+                   {{this.zeit}}
           </label>
         </mat-form-field>
         
-        <button mat-raised-button [disabled]="createVital.invalid">
+        <button mat-raised-button>
           Werte eintragen
         </button>
       </form>
